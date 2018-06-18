@@ -1,0 +1,48 @@
+<html lang="en">
+  <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-103076598-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-103076598-2');
+    </script>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <title>{{meta_title}}</title>
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+      .time {
+        width:6em;
+        flex-shrink:0;
+        padding-bottom:.9em
+      }
+      .content div {
+        display:flex
+      }
+    </style>
+  </head>
+  <body>
+    <h1>{{@blog.title}}</h1>
+    <a href="/about">About</a>
+    <a href="/rss">RSS</a>
+    <hr/>
+    <main class="content" role="main">
+      {{#foreach posts}}
+        <div>
+          <div class="time">
+            <time datatime="{{date format='YYYY-MM-DD'}}">{{date}}</time>
+          </div>
+          <a href="{{url}}">{{{title}}}</a>
+        </div>
+      {{/foreach}}
+    </main>
+  </body>
+</html>
+
